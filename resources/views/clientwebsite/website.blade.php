@@ -305,7 +305,7 @@
         <div class="header-content">
             <div class="header-logo">
                 <a href="/" style="text-decoration: none;">
-                    <img src="logo.png" alt="TrackNET Logo"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <img src="/images/logo.png" alt="TrackNET Logo"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     &nbsp; &nbsp; &nbsp; &nbsp;
                     <span class="header-logo-text">TrackNET</span>
                 </a>
@@ -343,7 +343,7 @@
                 The system enables seamless stock monitoring, supplier management, and automated inventory updates to
                 streamline operations.
             </p>
-            <img src="welcomepic.png" alt="Welcome Picture" class="home-image">
+            <img src="/images/welcomepic.png" alt="Welcome Picture" class="home-image">
         </div>
         <div class="home-btn-container">
             <a href="/index" class="home-btn">Get Started</a>

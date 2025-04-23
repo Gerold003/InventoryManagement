@@ -11,7 +11,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: url('TrackNETbg.jpg');
+            background-image: url('/images/TrackNETbg.jpg');
             background-size: cover;
             background-attachment: fixed;
             color: white;
@@ -101,7 +101,7 @@
 <body>
     <div class="sidebar">
         <div class="sidebar-logo">
-            <img src="logo.png" alt="TrackNET Logo">
+            <img src="/images/logo.png" alt="TrackNET Logo">
             <span class="sidebar-logo-text">TrackNET</span>
         </div>
         <a href="{{ route('admin.dashboard') }}" id="dashboard-link" class="active" style="font-size:19px;">

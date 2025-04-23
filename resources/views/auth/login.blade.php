@@ -8,7 +8,7 @@
     <title>Log in</title>
     <style>
         body {
-            background-image: url('TrackNETbg.jpg');
+            background-image: url('/images/TrackNETbg.jpg');
             background-size: cover;
             height: 100vh;
             display: flex;
@@ -153,7 +153,7 @@
     <div class="card text-start position-relative" style="width: 450px;">
         <i class="bi bi-bookmark-fill bookmark-icon"></i>
         <div class="logo-container">
-            <img src="logo.png" alt="Logo">
+            <img src="/images/logo.png" alt="Logo">
         </div>
         <h4 class="mb-3 text-center" style="color: white; font-weight: bold;">TrackNET</h4>
         <p class="mb-4 text-center" style="color: #9AA0A6; font-size: 14px;">Login with your account to continue.</p>
