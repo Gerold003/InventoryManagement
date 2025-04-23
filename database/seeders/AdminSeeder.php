@@ -60,14 +60,15 @@ class AdminSeeder extends Seeder
         ]);
 
         // C L I E N T S
+        $clientRoleId = DB::table('roles')->where('name', 'Clients')->value('id');
+
         DB::table('clients')->insert([
             'name' => 'Gerold',
             'username' => 'gerold',
-            'email' => 'jervageroldns@gmail.com',
+            'email' => 'gerold@gmail.com',
             'contact_number' => '09512463879',
             'password' => Hash::make('gerold123'), 
-            'role_id' => $sdepRoleId,
-            'department_id' => 3,
+            'role_id' => $clientRoleId,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

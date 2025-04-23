@@ -176,15 +176,15 @@
                 </span>
             </div>
             <div class="text-start mb-3">
-                {{-- <a href="{{ route('password.request') }}" style="color: #8AB4F8; font-size: 14px; text-decoration: none;">Forgot password?</a> --}}
+                <a href="{{ route('resetpassword') }}" style="color: #8AB4F8; font-size: 14px; text-decoration: none;">Forgot password?</a>
             </div>
             <div class="text-start mb-3" style="font-size: 12px; color: #9AA0A6;">
-                Don't have an account? <a href="/newcontacts" style="color: #8AB4F8; text-decoration: none;">Create one.</a>
+                Don't have an account? <a href="{{ route('createclient') }}" style="color: #8AB4F8; text-decoration: none;">Create one.</a>
             </div>
             <button type="submit" class="btn btn-custom w-100">Next</button>
         </form>
         <div class="mt-4 text-start">
-            <a href="/" style="color: #8AB4F8; font-size: 14px; text-decoration: none;">Return to homepage</a>
+            <a href="{{ route('clientwebsite.website') }}"style="color: #8AB4F8; font-size: 14px; text-decoration: none;">Return to homepage</a>
         </div>
     </div>
 <script>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
         body {
-            background-image: url('TrackNETbg.jpg');
+            background-image: url('/images/TrackNETbg.jpg');
             background-size: cover;
             height: 100vh;
             display: flex;
@@ -38,7 +37,7 @@
             margin-bottom: 8px;
             font-size: 15px;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-            border-radius: 10px !important ;
+            border-radius: 10px !important;
             padding: 10px;
             border: 1px solid #ccc;
             outline: none;
@@ -56,7 +55,6 @@
             color: #E8EAED;
         }
 
-
         input::placeholder {
             color: #ccc;
         }
@@ -64,7 +62,6 @@
         input.form-control::placeholder {
             color: #ccc !important;
         }
-
 
         input[type="password"]:focus,
         input[type="text"]:focus,
@@ -110,8 +107,6 @@
             color: #ff5733;
         }
 
-
-
         .card {
             background: #1E1E1E;
             border-radius: 35px;
@@ -121,7 +116,6 @@
             position: relative;
             overflow: hidden;
         }
-
 
         .card::before {
             content: "";
@@ -135,12 +129,10 @@
             pointer-events: none;
         }
 
-
         .card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
-
 
         .card::after {
             content: "";
@@ -195,37 +187,28 @@
             <h2 style="font-size: 30px; color:#ccc;">
                 <i class="bi bi-person-fill-add fs-1"></i> <b>Create Account</b>
             </h2>
-            <p style="color: #ccc; font-size: 15px;"><b>Please fill out the form to create an account</b>
-            </p>
+            <p style="color: #ccc; font-size: 15px;"><b>Please fill out the form to create an account</b></p>
             <br>
 
-
-
-            <form action="{{ route('savecontacts') }}" method="POST">
+            <form  action="{{ route('clients.store') }}" method="POST">
                 @csrf
-                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
 
                 @if (session('success'))
-                    <p style="color: #4CAF50;">{{ session('success') }}
-
-                    </p>
+                    <p style="color: #4CAF50;">{{ session('success') }}</p>
                 @endif
 
                 @if (session('error'))
-                    <p style="color: rgb(160, 24, 24);">{{ session('error') }}
-
-                    </p>
+                    <p style="color: rgb(160, 24, 24);">{{ session('error') }}</p>
                 @endif
 
                 <div class="row">
                     <div class="col mt-2">
-                        <input type="text" name="uname" class="form-control" placeholder="Username"
-                            value="<?= isset($_POST['uname']) ? htmlspecialchars($_POST['uname']) : '' ?>" required
-                            autofocus>
+                        <input type="text" name="username" class="form-control" placeholder="Username"
+                            required autofocus>
                     </div>
                     <div class="col mt-2">
                         <div class="input-group">
-                            <input type="password" name="pword" id="password" class="form-control"
+                            <input type="password" name="password" id="password" class="form-control"
                                 placeholder="Password" required>
                             <button type="button" class="eye-button" onclick="togglePassword()">
                                 <i id="toggleIcon" class="bi bi-eye-slash"></i>
@@ -238,17 +221,16 @@
                 <div class="row">
                     <div class="col mt-2">
                         <input type="text" name="contact_number" class="form-control" placeholder="Contact number"
-                            value="<?= isset($_POST['contact_number']) ? htmlspecialchars($_POST['contact_number']) : '' ?>"
-                            required>
+                             required>
                     </div>
                     <div class="col mt-2">
                         <input type="email" name="email" class="form-control" placeholder="Email address"
-                            value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" required>
+                             required>
                     </div>
                 </div>
                 <br>
                 <div class="d-flex justify-content-between mb-4 mt-4">
-                    <a href="/index" class="btn btn-custom w-45"><i class="bi bi-arrow-left fs-5"></i> &nbsp;
+                    <a href="{{ route('login') }}" class="btn btn-custom w-45"><i class="bi bi-arrow-left fs-5"></i> &nbsp;
                         Back to Login
                     </a>
                     <button type="submit" class="btn btn-custom-success w-45"><i class="bi bi-check2-circle fs-5"></i>

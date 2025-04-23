@@ -9,7 +9,7 @@
     <title>Reset Password</title>
     <style>
         body {
-            background-image: url('TrackNETbg.jpg');
+            background-image: url('/images/TrackNETbg.jpg');
             background-size: cover;
             height: 100vh;
             display: flex;
@@ -208,7 +208,7 @@
             <button type="submit" class="btn btn-custom-res w-100"><i class="bi bi-arrow-repeat fs-5"></i> &nbsp; Reset Password</button>
         </form>
         <div class="mt-4">
-            <a href="/index" class="btn btn-custom w-100"><i class="bi bi-arrow-left fs-5"></i> &nbsp; Back to Login</a>
+            <a href="{{ route('login') }}" class="btn btn-custom w-100"><i class="bi bi-arrow-left fs-5"></i> &nbsp; Back to Login</a>
         </div>
     </div>
     <script>
