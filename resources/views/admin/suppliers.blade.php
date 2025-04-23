@@ -68,6 +68,11 @@
             border-left: 4px solid #ff7b54;
         }
 
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+
         .logout-btn {
             background: #ff7b54;
             position: absolute;
@@ -126,11 +131,9 @@
            <i class="bi bi-power fs-4"></i> Sign out
         </a>
     </div>
-
-    <div class="/dashboard" style="text-align:center;">
-        Hi Dash
+    <div class="/suppliers" style="text-align:center;">
+        Hi Suppliers
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

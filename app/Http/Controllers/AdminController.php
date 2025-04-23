@@ -17,4 +17,16 @@ class AdminController extends Controller
     {
         return view('admin.stockmanager'); // Ensure this view exists
     }
+    public function supplier()
+    {
+        return view('admin.suppliers'); // Ensure this view exists
+    }
+    public function reports()
+    {
+        return view('admin.reports'); // Ensure this view exists
+    }
+    public function orders()
+    {
+        return view('admin.orders'); // Ensure this view exists
+    }
 }

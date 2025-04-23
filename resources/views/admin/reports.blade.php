@@ -107,7 +107,7 @@
         <a href="{{ route('admin.dashboard') }}" id="dashboard-link" class="active" style="font-size:19px;">
             <i class="bi bi-graph-up fs-3 ms-6"></i> &nbsp; Dashboard
         </a>
-        <a href="{{ route('admin.stockmanager') }}" id="stock-management" class="active" style="font-size:19px;">
+        <a href="{{ route('admin.stockmanagement') }}" id="stock-management" class="active" style="font-size:19px;">
             <i class="bi bi-box-seam fs-3 ms-6"></i> &nbsp; Item Management
         </a>
         <a href="{{ route('admin.suppliers') }}" id="supply" class="active" style="font-size:19px;">
@@ -127,8 +127,8 @@
         </a>
     </div>
 
-    <div class="/dashboard" style="text-align:center;">
-        Hi Dash
+    <div class="/reports" style="text-align:center;">
+        Hi Reports
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

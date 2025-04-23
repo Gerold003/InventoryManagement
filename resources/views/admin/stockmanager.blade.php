@@ -324,19 +324,19 @@
             <i class="bi bi-box-seam fs-3 ms-6"></i> &nbsp; Item Management
         </a>
 
-        <a href="/suppliers" id="supply" class="active" style="font-size:19px">
+        <a href="{{ route('admin.suppliers') }}" id="supply" class="active" style="font-size:19px">
             <i class="bi bi-people fs-3 ms-6"></i> &nbsp; Suppliers
         </a>
 
-        <a href="/orders" id="orders" class="active" style="font-size:19px">
+        <a href="{{ route('admin.orders') }}" id="orders" class="active" style="font-size:19px">
             <i class="bi bi-map fs-3 ms-6"></i> &nbsp; Orders
         </a>
 
-        <a href="/reports" id="reports" class="active" style="font-size:19px">
+        <a href="{{ route('admin.reports') }}" id="reports" class="active" style="font-size:19px">
             <i class="bi bi-info-lg fs-3 ms-6"></i> &nbsp; Reports
         </a>
 
-        <a href="/" class="btn btn-customs logout-btn"
+        <a href="{{ route('clientwebsite.website') }}" class="btn btn-customs logout-btn"
            style="font-size: 18px; text-align: center; display: flex; align-items: center;
                   justify-content: center; gap: 8px; padding: 7px 15px;
                   border-radius: 12px; font-weight: 600;">
