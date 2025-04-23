@@ -319,7 +319,7 @@
                     <a href="#contact">Contact</a>
                     <p style="font-size: 40px;"> | </p>
                     <a href="/login">Login</a>
-                    <a href="/newcontacts">Register</a>
+                    <a href="/createclient">Register</a>
 
 
                 </div>
