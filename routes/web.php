@@ -9,9 +9,9 @@ Route::middleware(['auth.session'])->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
         Route::get('/stockmanager', [AdminController::class, 'stockmanager'])->name('admin.stockmanager');
-        Route::get('/suppliers', [AdminController::class, 'suppliers'])->name('admin.suppliers');
-        Route::get('/orders', [AdminController::class, 'orders'])->name('admin.orders');
-        Route::get('/reports', [AdminController::class, 'reports'])->name('admin.reports');
+        Route::get('/supplier', [AdminController::class, 'supplier'])->name('admin.suppliers');
+        Route::get('/order', [AdminController::class, 'order'])->name('admin.orders');
+        Route::get('/report', [AdminController::class, 'report'])->name('admin.reports');
 
 
     });

@@ -21,11 +21,11 @@ class AdminController extends Controller
     {
         return view('admin.suppliers'); // Ensure this view exists
     }
-    public function reports()
+    public function report()
     {
         return view('admin.reports'); // Ensure this view exists
     }
-    public function orders()
+    public function order()
     {
         return view('admin.orders'); // Ensure this view exists
     }
