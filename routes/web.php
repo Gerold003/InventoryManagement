@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CreateClientController;
 use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ItemController;
 
 
 // P U B L I C
@@ -38,5 +39,7 @@ Route::middleware(['auth.session'])->group(function () {
         Route::get('/supplier', [AdminController::class, 'supplier'])->name('admin.suppliers');
         Route::get('/order', [AdminController::class, 'order'])->name('admin.orders');
         Route::get('/report', [AdminController::class, 'report'])->name('admin.reports');
+        Route::get('/admin/stockmanager', [ItemController::class, 'index'])->name('admin.stockmanager');
+        Route::post('/admin/stockmanager', [ItemController::class, 'store'])->name('admin.stockmanager.store');
     });
 });

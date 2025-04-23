@@ -431,8 +431,8 @@
             <h4>Add New Item</h4>
         </div>
         <div class="card-body overflow-hidden">
-            <form id="itemForm" class="row g-3" method="POST" > 
-                {{-- action="{{ route('items.store') }}" --}}
+            <form id="itemForm" class="row g-3" action="{{ route('admin.stockmanager.store') }}" method="POST" > 
+                
                 @csrf
                 <div class="col-md-6">
                     <label for="itemName" class="form-label">Item Name :</label>
@@ -484,8 +484,8 @@
                     </select>
                 </div>
                 <div class="col-md-6">
-<label for="imageUpload" class="form-label">Upload Image :</label>
-                    <input type="file" id="imageUpload" class="form-control">
+                    <label for="imageUpload" class="form-label">Upload Image :</label>
+                    <input type="file" id="imageUpload" class="form-control" name="image">
                 </div>
 
                 <div class="col-md-12">
@@ -494,7 +494,7 @@
                 </div>
 
                 <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-primary px-4">Submit</button>
+                    <button type="button" class="btn btn-primary px-4" id="confirmButton">Submit</button>
 &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;
                     <button type="button" class="btn btn-secondary px-4" onclick="toggleForm()">Cancel</button>
                 </div>
