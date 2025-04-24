@@ -41,5 +41,6 @@ Route::middleware(['auth.session'])->group(function () {
         Route::get('/report', [AdminController::class, 'report'])->name('admin.reports');
         Route::get('/admin/stockmanager', [ItemController::class, 'index'])->name('admin.stockmanager');
         Route::post('/admin/stockmanager', [ItemController::class, 'store'])->name('admin.stockmanager.store');
+        
     });
 });

@@ -346,7 +346,7 @@
             <img src="/images/welcomepic.png" alt="Welcome Picture" class="home-image">
         </div>
         <div class="home-btn-container">
-            <a href="/index" class="home-btn">Get Started</a>
+            <a href="/login" class="home-btn">Get Started</a>
         </div>
     </div>
     <div id="features" class="section">

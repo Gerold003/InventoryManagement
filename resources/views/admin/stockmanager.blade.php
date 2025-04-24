@@ -18,6 +18,7 @@
             color: white;
             display: flex;
             overflow: hidden;
+            
         }
 
         .sidebar {
@@ -33,6 +34,7 @@
             flex-direction: column;
             align-items: justify;
             text-align: left;
+            opacity: 97%;
         }
 
         .sidebar-logo {
@@ -82,6 +84,7 @@
             width: 90%;
             margin: -50;
             padding: 20px;
+            opacity: 97%;
         }
 
         .content {
@@ -139,10 +142,13 @@
             padding: 0px 30px;
             border-radius: 15px;
             width: 100%;
+    
+
         }
 
         .tab-content.active {
             display: block;
+           
         }
 
         .logout-btn {
@@ -358,6 +364,8 @@
 
 
                 <label for="categoryFilter">Category :
+                    <br>
+                    <br>
                 <select id="categoryFilter" onchange="filterItems()" class="form-select" style="border-radius: 5px; width: 200px;">
                     <option value="all">All</option>
                     <option value="core">Core Components</option>
@@ -369,17 +377,36 @@
                 </select>
             </label>
 
-                {{-- <table class="table table-dark table-striped mt-4">
+                 <table class="table table-dark table-striped mt-4"> 
                     <thead>
+                       
+                        <br>
                         <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Stocks</th>
+                            <th>Price</th>
+                            <th>Supplier</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Description</th>
+                            <th></th>
 
+
+
+                        
                         </tr>
                     </thead>
                     <tbody id="itemsTableBody">
                         @foreach ($items as $item)
                             <tr data-category="{{ $item->category }}">
+                              
+
                                 <td>{{ $item->id }}</td>
-                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->item_name }}</td>
                                 <td>{{ $item->category }}</td>
                                 <td>{{ $item->brand }}</td>
                                 <td>{{ $item->model }}</td>
@@ -396,7 +423,7 @@
                             </tr>
                         @endforeach
                     </tbody>
-                </table> --}}
+                </table> 
             </div>
 
             <div id="stocks" class="tab-content">
@@ -490,11 +517,11 @@
 
                 <div class="col-md-12">
                     <label for="description" class="form-label">Description/Notes :</label>
-                    <textarea id="description" name="description" class="form-control" rows="3"></textarea>
+                    <textarea id="description" name="description" class="form-control" rows="2.5"></textarea>
                 </div>
 
                 <div class="col-12 text-center">
-                    <button type="button" class="btn btn-primary px-4" id="confirmButton">Submit</button>
+                    <button type="button" class="btn btn-primary px-4">Submit</button>
 &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;
                     <button type="button" class="btn btn-secondary px-4" onclick="toggleForm()">Cancel</button>
                 </div>
@@ -523,7 +550,7 @@
             </div>
             <div class="modal-footer" style="background-color: #1e1e1e; color: #fff">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" id="confirmSubmit">Confirm</button>
+                <button type="button" class="btn btn-primary" id="confirmButton">Confirm</button>
             </div>
         </div>
     </div>
