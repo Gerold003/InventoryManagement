@@ -18,7 +18,6 @@
             color: white;
             display: flex;
             overflow: hidden;
-            
         }
 
         .sidebar {
@@ -34,7 +33,6 @@
             flex-direction: column;
             align-items: justify;
             text-align: left;
-            opacity: 97%;
         }
 
         .sidebar-logo {
@@ -84,7 +82,6 @@
             width: 90%;
             margin: -50;
             padding: 20px;
-            opacity: 97%;
         }
 
         .content {
@@ -142,13 +139,10 @@
             padding: 0px 30px;
             border-radius: 15px;
             width: 100%;
-    
-
         }
 
         .tab-content.active {
             display: block;
-           
         }
 
         .logout-btn {
@@ -364,8 +358,6 @@
 
 
                 <label for="categoryFilter">Category :
-                    <br>
-                    <br>
                 <select id="categoryFilter" onchange="filterItems()" class="form-select" style="border-radius: 5px; width: 200px;">
                     <option value="all">All</option>
                     <option value="core">Core Components</option>
@@ -377,9 +369,9 @@
                 </select>
             </label>
 
-                 <table class="table table-dark table-striped mt-4"> 
-                    <thead>
-                       
+                 <table class="table table-dark table-striped mt-4">
+                    <thead> 
+
                         <br>
                         <tr>
                             <th>ID</th>
@@ -397,7 +389,6 @@
 
 
 
-                        
                         </tr>
                     </thead>
                     <tbody id="itemsTableBody">
@@ -426,10 +417,34 @@
                 </table> 
             </div>
 
-            <div id="stocks" class="tab-content">
+            <div id="stocks" class="tab-content" style="display: none;">
                 <h3>Stock Management</h3>
                 <p>Manage your stock levels here.</p>
+            
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    @foreach ($items as $item)
+                        <div class="col">
+                            <div class="card h-100">
+                                @if($item->image)
+                                    <img src="{{ asset('storage/images/' . $item->image) }}" class="card-img-top" alt="{{ $item->item_name }}">
+                                @else
+                                    <img src="{{ asset('images/default.png') }}" class="card-img-top" alt="No Image">
+                                @endif
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $item->item_name }}</h5>
+                                    <p class="card-text">₱{{ number_format($item->unit_price, 2) }}</p>
+                                    <p class="card-text"><small class="text-muted">Stocks: {{ $item->quantity }}</small></p>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="{{ route('stocks.add', $item->id) }}" class="btn btn-success btn-sm">Add Stock</a>
+                                        <a href="{{ route('stocks.out', $item->id) }}" class="btn btn-warning btn-sm">Stock Out</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
+            
 
             <div id="logs" class="tab-content">
                 <h3>Logs</h3>
@@ -517,11 +532,11 @@
 
                 <div class="col-md-12">
                     <label for="description" class="form-label">Description/Notes :</label>
-                    <textarea id="description" name="description" class="form-control" rows="2.5"></textarea>
+                    <textarea id="description" name="description" class="form-control" rows="3"></textarea>
                 </div>
 
                 <div class="col-12 text-center">
-                    <button type="button" class="btn btn-primary px-4">Submit</button>
+                    <button type="button" class="btn btn-primary px-4" id="confirmButton">Submit</button>
 &nbsp;   &nbsp;   &nbsp; &nbsp;   &nbsp;   &nbsp;
                     <button type="button" class="btn btn-secondary px-4" onclick="toggleForm()">Cancel</button>
                 </div>
@@ -550,7 +565,7 @@
             </div>
             <div class="modal-footer" style="background-color: #1e1e1e; color: #fff">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" id="confirmButton">Confirm</button>
+                <button type="button" class="btn btn-primary" id="confirmSubmit">Confirm</button>
             </div>
         </div>
     </div>
