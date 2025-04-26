@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
-return new class extends Migration
+class CreateItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,14 +17,14 @@ return new class extends Migration
             $table->string('category');
             $table->string('brand');
             $table->string('model');
-            $table->integer('quantity');
-            $table->decimal('unit_price', 10, 2);
+            $table->integer('quantity')->default(0);
+            $table->decimal('unit_price', 10, 2)->default(0.00);
             $table->string('supplier');
             $table->date('date_acquired');
-            $table->string('status');
+            $table->string('status')->default('available'); 
+            $table->string('image_path')->nullable(); // Rename 'image' to 'image_path'
             $table->text('description')->nullable();
-            $table->string('image_path')->nullable(); // For uploaded images
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 
@@ -36,4 +35,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('items');
     }
-};
+}

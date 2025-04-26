@@ -53,4 +53,53 @@ class ItemController extends Controller
 
         return redirect()->route('admin.stockmanager')->with('success', 'Item added successfully.');
     }
+
+    
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|integer|exists:items,id',
+            'itemName' => 'required|string|max:255',
+            'category' => 'required|string',
+            'brand' => 'required|string|max:255',
+            'model' => 'required|string|max:255',
+            'quantity' => 'required|integer|min:0',
+            'unitPrice' => 'required|numeric|min:0',
+            'supplier' => 'required|string|max:255',
+            'dateAcquired' => 'required|date',
+            'status' => 'required|string',
+            'description' => 'nullable|string',
+        ]);
+
+        $item = Item::findOrFail($request->id);
+
+        $item->item_name = $request->input('itemName');
+        $item->category = $request->input('category');
+        $item->brand = $request->input('brand');
+        $item->model = $request->input('model');
+        $item->quantity = $request->input('quantity');
+        $item->unit_price = $request->input('unitPrice');
+        $item->supplier = $request->input('supplier');
+        $item->date_acquired = $request->input('dateAcquired');
+        $item->status = $request->input('status');
+        $item->description = $request->input('description');
+
+        $item->save();
+
+        return redirect()->back()->with('success', 'Item updated successfully.');
+    }
+    
+    public function delete(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|integer|exists:items,id',
+        ]);
+    
+        $item = Item::findOrFail($request->id);
+        $item->delete();
+    
+        return redirect()->back()->with('success', 'Item deleted successfully.');
+    }
+  
 }
